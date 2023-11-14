@@ -36,7 +36,7 @@
 			{#if width <= 624}
 				<li class="curriculum">
 					<a
-						href="http://localhost:3000/curriculum.pdf"
+						href="/curriculum.pdf"
 						title="download curriculum"
 						target="_blank"
 						rel="norreferer"
@@ -51,7 +51,7 @@
 	{/if}
 	<a
 		class="download"
-		href="http://localhost:3000/curriculum.pdf"
+		href="/curriculum.pdf"
 		title="download curriculum"
 		target="_blank"
 		rel="norreferer"
