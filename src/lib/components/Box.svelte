@@ -9,7 +9,7 @@
 	let scrollX = 0;
 
 	function scrollTo(scroll: number) {
-		scrollX = boxElement.scrollLeft + scroll;
+		scrollX = scrollX + scroll;
 		boxElement.scrollTo({ left: scrollX, behavior: 'smooth' });
 	};
 
@@ -45,51 +45,32 @@
 <style lang="postcss">
 	.box-project {
 		@apply flex items-center justify-center w-full;
-	}
 
-	.box-project div {
-		padding: 5px;
-		scrollbar-width: none;
-		@apply flex justify-start w-min max-h-min overflow-y-auto gap-5;
+		& div {
+			scrollbar-width: none;
+			@apply flex justify-start w-min max-h-min p-[5px] overflow-y-auto gap-5;
+		}
+
+		@container (width <= 680px) {
+			@apply w-[360px];
+		}
+
+		@container (width > 680px) and (width <= 1000px) {
+			@apply w-[680px];
+		}
+
+		@container (width > 1000px) {
+			@apply w-[1000px];
+		}
 	}
 
 	button {
-		width: 25px;
-		min-width: 25px;
-		max-width: 25px;
-		color: #000000;
-		@apply text-5xl leading-none;
-	}
+		@apply flex-none w-[25px] text-[48px] text-black disabled:text-[#b1abab] [&.occult]:invisible;
 
-	.occult {
-		@apply invisible;
-	}
-
-	button[disabled] {
-		color: #b1abab;
-	}
-
-	@container (width < 400px) {
-		.fa-caret-left, .fa-caret-right {
-			@apply text-4xl;
-		}
-	}
-	
-	@container (width <= 680px) {
-		.box-project {
-			width: 360px;
-		}
-	}
-
-	@container (width > 680px) and (width <= 1000px) {
-		.box-project {
-			width: 680px;
-		}
-	}
-
-	@container (width > 1000px) {
-		.box-project {
-			width: 1000px;
+		@container (width < 400px) {
+			& i {
+				@apply text-[36px];
+			}
 		}
 	}
 </style>

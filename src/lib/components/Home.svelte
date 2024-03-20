@@ -1,19 +1,27 @@
 <script lang="ts">
-  const listOfIcons = ['js', 'ts', 'tcss', 'svelte', 'react', 'express', 'socketio', 'mysql', 'mongodb'];
+	import * as icon from '$lib/assets/icons';
+
+  const listOfMainIcons = [icon.js, icon.ts, icon.tcss, icon.svelte, icon.express, icon.cockroachdb, icon.mongodb];
+  const listOfIcons = [icon.react, icon.astrojs, icon.nodemailer, icon.socketio, icon.mysql];
 </script>
 
 <div class="home">
-	<img
-		class="perfil"
-		decoding="async"
-		loading="lazy"
-		src="/holder.jpg"
-		alt="Santiago Cuebas"
-		title="Photo of perfil"
-	>
-  <h1>Santiago Cuebas</h1>
-  <h2>Junior Full Stack Developer</h2>
-	<div class="about">
+	<picture>
+		<img
+			decoding="async"
+			loading="lazy"
+			src="/profile.jpg"
+			alt="Santiago Cuebas"
+			title="Photo of perfil"
+		>
+	</picture>
+  <h1>
+		Santiago Cuebas
+	</h1>
+  <h2>
+		Junior Full Stack Developer
+	</h2>
+	<div>
 		<p>Hello here! Welcome to my online portfolio.</p>
 		<p>
 			My name is Santiago Cuebas. I am a autodidact in constant growth and passionate about web development with knowledge in both frontend and backend.
@@ -21,33 +29,33 @@
 	</div>
 	<div class="techs">
 		<p>I currently work with the following techs:</p>
+		{#each listOfMainIcons as icon}
+			<img src={icon} alt=''>
+		{/each}
+		<p>I'm also aware of:</p>
 		{#each listOfIcons as icon}
-			<img class="icon" src="/icons/{icon}.png" alt={icon}>
+			<img src={icon} alt=''>
 		{/each}
 	</div>
 </div>
 
 <style lang="postcss">
 	.home {
-		grid-template-columns: 1fr 300px;
-		grid-auto-rows: min-content min-content 1fr min-content;
-		max-width: 900px;
-		min-width: 300px;
-		color: #ffffff;
 		container: home / inline-size;
-		@apply grid relative w-2/3 gap-y-2.5;
+		@apply relative justify-center w-2/3 min-w-[200px] max-w-[900px] text-white
+		[&_div]:my-2;
 	}
 
-	.perfil {
-		grid-column: 2 / span 1;
-		grid-row: 1 / span 3;
-		width: 300px;
-		height: 300px;
-		@apply justify-self-center top-0 right-0 rounded-full object-cover object-center;
+	picture {
+		@apply flex relative float-end justify-center w-[300px] h-[300px] my-2;
+
+		& img {
+			@apply w-auto h-full object-contain rounded-xl;
+		}
 	}
 
 	h1, h2 {
-		@apply self-center text-center text-5xl leading-tight font-bold;
+		@apply my-2 text-center text-5xl leading-tight font-bold;
 	}
 
 	h2 {
@@ -55,25 +63,16 @@
 	}
 
 	.techs {
-		grid-column: 1 / span 2;
-		@apply flex flex-wrap gap-2.5;
-	}
+		@apply flex flex-wrap gap-2.5 [&_p]:w-full;
 
-	.techs p {
-		@apply w-full;
-	}
-
-	.techs .icon {
-		@apply w-16 h-16 object-contain object-center rounded-xl;
+		& img {
+			@apply w-16 h-16 object-contain object-center rounded-xl;
+		}
 	}
 
 	@container home (width < 600px) {
-		.perfil, h1, h2, .about {
-			grid-column: 1 / span 2;
-		}
-
-		.perfil {
-			grid-row: 1 / span 1;
+		picture {
+			@apply float-none m-auto;
 		}
 	}
 </style>

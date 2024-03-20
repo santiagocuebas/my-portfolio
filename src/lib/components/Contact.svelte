@@ -39,7 +39,9 @@
 </script>
 
 <div class="contact">
-	<h2>Contact me</h2>
+	<h2>
+		Contact me
+	</h2>
 	<p>You can contact me by sending an email</p>
 	<form
 		action="/api/send"
@@ -69,47 +71,37 @@
 
 <style lang="postcss">
 	.contact {
-		min-width: 300px;
-		max-width: 500px;
-		@apply grid justify-center w-2/3 gap-y-4;
+		@apply grid justify-center w-2/3 min-w-[300px] max-w-[500px] gap-y-4;
 	}
 
 	h2 {
-		color: #ffffff;
-		@apply w-max m-auto text-5xl font-bold leading-none;
+		@apply w-max m-auto text-[48px] font-bold text-white;
 	}
 
 	p {
-		color: #ffffff;
-		@apply w-full overflow-hidden break-words text-center leading-tight;
+		@apply w-full overflow-hidden break-words text-center text-[18px] font-medium text-white leading-tight;
 	}
 
 	form {
-		background-color: #ffffff;
-		color: #000000;
-		@apply flex flex-wrap justify-center w-full p-4 rounded gap-y-3;
-	}
+		@apply flex flex-wrap justify-center w-full p-4 rounded bg-white text-black gap-y-3;
 
-	form div {
-		@apply w-full p-3 text-center text-lg leading-none rounded-lg;
-	}
+		& div {
+			border: 1px solid #1a720f;
+			box-shadow: 0 0 0 1px #1a720f;
+			@apply w-full p-3 bg-[#9eeb9c] text-center text-[18px] rounded-lg;
 
-	.success {
-		background-color: #9eeb9c;
-		border: 1px solid #1a720f;
-		box-shadow: 0 0 0 1px #1a720f;
-	}
+			&.warn {
+				border: 1px solid #70720f;
+				box-shadow: 0 0 0 1px #70720f;
+				@apply bg-[#eaeb9c];
+			}
 
-	.warn {
-		background-color: #eaeb9c;
-		border: 1px solid #70720f;
-		box-shadow: 0 0 0 1px #70720f;
-	}
-
-	.error {
-		background-color: #eb9c9c;
-		border: 1px solid #720f0f;
-		box-shadow: 0 0 0 1px #720f0f;
+			&.error {
+				border: 1px solid #720f0f;
+				box-shadow: 0 0 0 1px #720f0f;
+				@apply bg-[#eb9c9c];
+			}
+		}
 	}
 
 	label {
@@ -126,13 +118,7 @@
 	}
 
 	button {
-		background-color: #5383d3;
-		color: #ffffff;
-		@apply px-12 py-2 text-2xl leading-none font-medium rounded-lg;
-	}
-
-	button[disabled] {
-		background-color: #dddddd;
-		color: #666666;
+		@apply px-12 py-2 bg-[#5383d3] rounded-lg text-[24px] font-medium text-white
+		disabled:bg-[#dddddd] disabled:text-[#666666];
 	}
 </style>

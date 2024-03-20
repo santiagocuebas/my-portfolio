@@ -67,11 +67,8 @@
 <style lang="postcss">
 	nav {
 		container-type: inline-size;
-		background-color: #5383d3;
 		box-shadow: 0 0 2px #cccccc;
-		color: #ffffff;
-		z-index: 100;
-		@apply flex items-center fixed top-0 w-full h-14 p-3 font-medium gap-x-3;
+		@apply flex fixed items-center w-full h-14 top-0 p-3 bg-[#5383d3] font-medium text-[#ffffff] gap-x-3 z-[100];
 	}
 
 	img {
@@ -80,16 +77,14 @@
 
 	ul {
 		@apply flex w-min h-min ml-auto leading-tight gap-x-3;
-	}
 
-	li i {
-		@apply hidden;
+		& i {
+			@apply hidden;
+		}
 	}
 
 	.download {
-		min-width: 40px;
-		background-color: #33a82f;
-		@apply flex items-center h-10 px-3 rounded-full gap-x-1;
+		@apply flex items-center min-w-10 h-10 px-3 bg-[#33a82f] rounded-full gap-x-1;
 	}
 
 	button {
@@ -98,32 +93,20 @@
 
 	@container (width <= 600px) {
 		ul {
-			max-width: 160px;
-			background-color: #ffffff;
 			box-shadow: 0 0 3px #555555;
-			color: #000000;
-			@apply absolute flex-wrap w-max py-1 top-12 right-3 rounded-sm;
-		}
+			@apply absolute flex-wrap w-max max-w-40 py-1 top-12 right-3 bg-white rounded-sm text-black;
 
-		ul li {
-			@apply flex w-full pl-4 py-1.5 text-lg leading-none cursor-pointer;
-		}
+			& li {
+				@apply flex w-full pl-4 py-1.5 text-lg leading-none cursor-pointer hover:bg-[#505050] hover:text-white [&.curriculum:hover]:bg-[#1e8627];
+			}
 
-		ul li:hover {
-			background-color: #505050;
-			color: #ffffff;
-		}
+			& a {
+				@apply flex items-center w-full gap-x-2;
+			}
 
-		.curriculum:hover {
-			background-color: #1e8627;
-		}
-
-		ul a {
-			@apply flex items-center w-full gap-x-2;
-		}
-
-		ul i {
-			@apply flex justify-center w-5;
+			& i {
+				@apply flex justify-center w-5;
+			}
 		}
 
 		button {

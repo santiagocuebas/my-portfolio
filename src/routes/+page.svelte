@@ -18,15 +18,14 @@
 <style lang="postcss">
 	main {
 		grid-auto-rows: min-content;
-		background-color: #ffffff;
-		@apply grid items-center justify-items-center w-full h-full mt-14;
+		@apply grid items-center justify-items-center w-full h-full mt-14 bg-white;
 	}
 
 	section {
 		@apply grid justify-items-center w-full py-16;
-	}
 
-	section:nth-child(2n + 2) {
-		background-color: #000000;
+		&:nth-child(2n + 2) {
+			@apply bg-black;
+		}
 	}
 </style>
