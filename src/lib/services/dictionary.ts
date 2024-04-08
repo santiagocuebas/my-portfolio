@@ -1,7 +1,7 @@
 import type { IDictionary } from "$lib/types/global";
 
 export const FormMessage: IDictionary = {
-  success: 'The message has been sent and received successfully',
-  warn: 'An error has occurred when sending the message. Please check if the email address is correct',
-  error: 'The value of one or more of the fields is incorrect. Please change them and try again'
+  success: 'El correo ha sido enviado y recibido éxitosamente',
+  warn: 'Un error ha ocurrido al enviar el mensaje. Por favor confirma si la dirección ingresada es correcta',
+  error: 'El valor de uno o más de los campos es incorrecto. Por favor, cámbialos y vuelve a intentarlo'
 };

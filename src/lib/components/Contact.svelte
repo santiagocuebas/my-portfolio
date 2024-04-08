@@ -40,9 +40,9 @@
 
 <div class="contact">
 	<h2>
-		Contact me
+		Contactame
 	</h2>
-	<p>You can contact me by sending an email</p>
+	<p>Puedes contactarme enviando un email</p>
 	<form
 		action="/api/send"
 		method="post"
@@ -52,20 +52,20 @@
 			<div class={className}>{FormMessage[className]}</div>
 		{/if}
 		<label>
-			Name:
-			<input type="text" name="name" placeholder="Enter your name" bind:value={name} maxlength="40">
+			Nombre:
+			<input type="text" name="name" placeholder="Ingresa tú nombre" bind:value={name} maxlength="40">
 		</label>
 		<label>
 			Email:
-			<input type="email" name="email" placeholder="Enter your email" bind:value={email} maxlength="255">
+			<input type="email" name="email" placeholder="Ingresa tú email" bind:value={email} maxlength="255">
 		</label>
 		<label>
-			Message:
-			<textarea name="message" placeholder="Enter your message" bind:value={text} maxlength="240" rows="5" spellcheck="false"></textarea>
+			Mensaje:
+			<textarea name="message" placeholder="Ingresa tú mensaje" bind:value={text} maxlength="240" rows="5" spellcheck="false"></textarea>
 		</label>
-		<button disabled={disabled || !name.length || !text.length || !checkEmail(email)}>
-			Submit
-		</button>
+		<button
+			disabled={disabled || !name.length || !text.length || !checkEmail(email)}
+		>Enviar</button>
 	</form>
 </div>
 

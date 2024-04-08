@@ -4,13 +4,13 @@
 
 <main>
 	<Nav />
-	<section id='home'>
+	<section id='principal'>
 		<Home />
 	</section>
 	<section id='portfolio'>
 		<Portfolio />
 	</section>
-	<section id="contact">
+	<section id="contacto">
 		<Contact />
 	</section>
 </main>

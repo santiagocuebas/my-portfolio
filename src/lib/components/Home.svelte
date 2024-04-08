@@ -19,20 +19,20 @@
 		Santiago Cuebas
 	</h1>
   <h2>
-		Junior Full Stack Developer
+		Desarrollador Junior Full Stack
 	</h2>
 	<div>
-		<p>Hello here! Welcome to my online portfolio.</p>
+		<p>!Buenas! Bienvenida a mí portfolio online.</p>
 		<p>
-			My name is Santiago Cuebas. I am a autodidact in constant growth and passionate about web development with knowledge in both frontend and backend.
+			Mí nombre es Santiago Cuebas. Soy un autodidacta en constante crecimiento y apasianado sobre el desarrollo web con conocimiento tanto en frontend como en backend.
 		</p>
 	</div>
 	<div class="techs">
-		<p>I currently work with the following techs:</p>
+		<p>Actualmente trabajo con las siguientes techs:</p>
 		{#each listOfMainIcons as icon}
 			<img src={icon} alt=''>
 		{/each}
-		<p>I'm also aware of:</p>
+		<p>También tengo conocimiento de:</p>
 		{#each listOfIcons as icon}
 			<img src={icon} alt=''>
 		{/each}

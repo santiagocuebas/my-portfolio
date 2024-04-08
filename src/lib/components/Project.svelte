@@ -25,7 +25,7 @@
 	</picture>
   <div id="content">
 		<h2>{project.name}</h2>
-		<div class="description">{project.description}</div>
+		<div class="description">{@html project.description}</div>
 		<div class="techs">
 			Techs: 
 			{#each version[counter].techs as { icon, name }}
@@ -36,7 +36,6 @@
 			href={version[counter].deploy}
 			class:deploy={version[counter].deploy}
 			target="_blank"
-			rel="noreferrer"
 			on:click={version[counter].deploy ? () => {} : preventAction}
 		>
 			<i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -88,7 +87,7 @@
 		}
 
 		& .description {
-			@apply flex-none w-full h-[60%] text-center overflow-hidden break-words;
+			@apply flex-none w-full h-[60%] px-1 text-center overflow-hidden break-words;
 		}
 
 		& .techs {

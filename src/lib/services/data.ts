@@ -1,10 +1,16 @@
-import type { IProject } from "$lib/types/global";
+import type { IProject, Tech } from "$lib/types/global";
 import * as image from '../assets/images';
 import * as icon from '../assets/icons';
 
-const githubUser = 'https://github.com/santiagocuebas/';
+const wrapLink = (text: string) => `<a class="font-medium text-[#5383d3] hover:text-[#a837ac]" href="https://github.com/fazt/nodejs-imgshare" target="_blank">${text}</a>`;
 
-const deployDir = (dir: string) => 'https://' + dir + '.netlify.app';
+const getVersion = (techs: Tech[], dir: string, link: string) => {
+	return {
+		techs,
+		deploy: dir ? 'https://' + dir + '.netlify.app' : dir,
+		github: 'https://github.com/santiagocuebas/' + link
+	}
+};
 
 const typeScript = { name: 'TypeScript', icon: icon.ts };
 const svelteKit = { name: 'SvelteKit', icon: icon.svelte };
@@ -23,27 +29,21 @@ export const mainProjects: IProject[] = [
 	{
 		id: 1,
 		image: image.svChat,
-		name: 'Advanced Chat App',
-		description: 'Web application to send chats and photos, with the possibility of creating groups and manage it',
+		name: 'SvChat App',
+		description: 'Aplicación web de mensajería, basada vagamente en WhatsApp. Permite enviar mensajes, fotos, audios y videos; asi como crear grupos. Creado con SvelteKit, Express, TypeScript y Socket.io.',
 		version: [
-			{
-				techs: [typeScript, svelteKit, tailwind, express, socket, mongodb],
-				deploy: deployDir('svchat-xcrv2f'),
-				github: githubUser + 'sveltekit-advanced-chat-app'
-			}
+			getVersion([typeScript, svelteKit, tailwind, express, socket, mongodb],
+				'svchat-xcrv2f', 'sveltekit-advanced-chat-app')
 		]
 	},
 	{
 		id: 2,
 		image: image.imgShare,
 		name: 'imgShare App',
-		description: 'Web application to share images, rate them, comment, add to favorites, etc',
+		description: `Aplicación web de colección de imagenes, basado en ${wrapLink('este')} projecto de Fazt. Permite compartir imagenes, valorarlas, comentarlas, añadir a favoritos, etc; utilizando SvelteKit, Express y TypeScript.`,
 		version: [
-			{
-				techs: [typeScript, svelteKit, tailwind, express, nodemailer, cockroach],
-				deploy: deployDir('imgshare-4c7df3'),
-				github: githubUser + 'sveltekit-imgshare-app'
-			}
+			getVersion([typeScript, svelteKit, tailwind, express, nodemailer, cockroach],
+				'imgshare-4c7df3', 'sveltekit-imgshare-app')
 		]
 	}
 ];
@@ -52,89 +52,60 @@ export const projects: IProject[] = [
 	{
 		id: 1,
 		image: image.astro,
-		name: 'Spotify Clon',
-		description: 'Simple web mirror of spotify with Transitions API',
+		name: 'Clon de Spotify',
+		description: `Simple web mirror de spotify utilizando Transitions API y Astro, basado en ${wrapLink('este')} proyecto de Miguel Ángel Durán (alias midudev).`,
 		version: [
-			{
-				techs: [typeScript, astro, svelte, tailwind],
-				deploy: deployDir('astro-spotify-1ac0a7'),
-				github: githubUser + 'astro-spotify'
-			}
+			getVersion([typeScript, astro, svelte, tailwind], 'astro-spotify-1ac0a7',
+				'astro-spotify')
 		]
 	},
 	{
 		id: 2,
 		image: image.chat,
-		name: 'Simple Chat App',
-		description: 'Simple web application for chatting',
+		name: 'Simple Aplicación Chat',
+		description: 'Simple aplicación web para chatear.',
 		version: [
-			{
-				techs: [typeScript, svelteKit, express, socket, mongodb],
-				deploy: '',
-				github: githubUser + 'sveltekit-chat-app'
-			}
+			getVersion([typeScript, svelteKit, express, socket, mongodb], '',
+				'sveltekit-chat-app')
 		]
 	},
 	{
 		id: 3,
 		image: image.links,
-		name: 'Links App',
-		description: 'Wen application to create, modify and delete links',
+		name: 'Aplicación de Links',
+		description: `Aplicación web para crear, modificar y borrar links; basado en el siguiente proyecto de Fazt: ${wrapLink('Links App con Nodejs')}.`,
 		version: [
-			{
-				techs: [typeScript, svelteKit, express, mysql],
-				deploy: '',
-				github: githubUser + 'sveltekit-task-app'
-			},
-			{
-				techs: [typeScript, nextjs, express, mysql],
-				deploy: '',
-				github: githubUser + 'task-nextjs-app'
-			},
+			getVersion([typeScript, svelteKit, express, mysql], '', 'sveltekit-task-app'),
+			getVersion([typeScript, nextjs, express, mysql], '', 'task-nextjs-app')
 		]
 	},
 	{
 		id: 4,
 		image: image.images,
-		name: 'Images App',
-		description: 'Web application to share images, rate them and comment',
+		name: 'Aplicación de Imágenes',
+		description: `Aplicación web para compartir imágenes, calificarlas y comentarlas; basado en el siguiente proyecto de Fazt: ${wrapLink('imgShare')}.`,
 		version: [
-			{
-				techs: [typeScript, svelteKit, express, mongodb],
-				deploy: '',
-				github: githubUser + 'sveltekit-images-app'
-			},
-			{
-				techs: [typeScript, nextjs, express, mongodb],
-				deploy: '',
-				github: githubUser + 'images-nextjs-app'
-			}
+			getVersion([typeScript, svelteKit, express, mongodb], '',
+				'sveltekit-images-app'),
+			getVersion([typeScript, nextjs, express, mongodb], '', 'images-nextjs-app')
 		]
 	},
 	{
 		id: 5,
 		image: image.task,
-		name: 'Task App',
-		description: 'Simple webpage to create, modify and delete tasks',
+		name: 'App de Tareas',
+		description: 'Simple página web para crear, modificar y borrar tareas',
 		version: [
-			{
-				techs: [typeScript, svelte, express],
-				deploy: '',
-				github: githubUser + 'task-svelte-app'
-			}
+			getVersion([typeScript, svelte, express], '', 'task-svelte-app')
 		]
 	},
 	{
 		id: 6,
 		image: image.calculator,
-		name: 'Calculator App',
-		description: 'Simple calculator',
+		name: 'App Calculadora',
+		description: 'Simple calculadora',
 		version: [
-			{
-				techs: [typeScript, svelte, express],
-				deploy: '',
-				github: githubUser + 'calculator-svelte-app'
-			}
+			getVersion([typeScript, svelte, express], '', 'calculator-svelte-app')
 		]
 	}
 ];

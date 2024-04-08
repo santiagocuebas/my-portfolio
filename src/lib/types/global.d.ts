@@ -1,8 +1,8 @@
-type Tech = { icon: string, name: string };
-
 type ResponseData = 'success' | 'warn' | 'error';
 
-interface IVersion {
+export type Tech = { icon: string, name: string };
+
+export interface IVersion {
 	techs: Tech[];
 	deploy: string;
 	github: string;

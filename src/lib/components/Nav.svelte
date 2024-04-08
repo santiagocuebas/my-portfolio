@@ -5,9 +5,9 @@
 	let width: number;
 	let visible = true;
 	const dataButtons = [
-		['home', 'house'],
+		['principal', 'house'],
 		['portfolio', 'file'],
-		['contact', 'user']
+		['contacto', 'user']
 	];
 
 	const isVisible = () => visible = false;
@@ -43,7 +43,7 @@
 						on:click={isVisible}
 					>
 						<i class="fa-solid fa-download"></i>
-						Download
+						Descargar
 					</a>
 				</li>
 			{/if}
@@ -68,7 +68,7 @@
 	nav {
 		container-type: inline-size;
 		box-shadow: 0 0 2px #cccccc;
-		@apply flex fixed items-center w-full h-14 top-0 p-3 bg-[#5383d3] font-medium text-[#ffffff] gap-x-3 z-[100];
+		@apply flex fixed items-center w-full h-14 top-0 p-3 bg-[#5383d3] font-medium text-white gap-x-3 z-[100];
 	}
 
 	img {

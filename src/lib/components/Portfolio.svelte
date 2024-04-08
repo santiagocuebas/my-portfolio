@@ -26,7 +26,7 @@
 	<div>
 		<button on:click={() => visible = !visible}>
 			<i class="fa-solid fa-{visible ? 'minus' : 'plus'}"></i>
-			{visible ? 'Show Less' : 'Show More'}
+			{visible ? 'Mostrar Menos' : 'Mostrar Más'}
 		</button>
 	</div>
 	<div>
