@@ -30,7 +30,7 @@
 		</button>
 	</div>
 	<div>
-		<a href="https://github.com/santiagocuebas" target="_blank">
+		<a href="https://github.com/santiagocuebas?tab=repositories" target="_blank">
 			<i class="fa-brands fa-github"></i>
 			Github Repo
 		</a>

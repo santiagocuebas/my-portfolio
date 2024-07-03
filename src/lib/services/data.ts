@@ -7,7 +7,7 @@ const wrapLink = (text: string) => `<a class="font-medium text-[#5383d3] hover:t
 const getVersion = (techs: Tech[], dir: string, link: string) => {
 	return {
 		techs,
-		deploy: dir ? 'https://' + dir + '.netlify.app' : dir,
+		deploy: dir ? 'https://' + dir + '.app' : dir,
 		github: 'https://github.com/santiagocuebas/' + link
 	}
 };
@@ -33,7 +33,7 @@ export const mainProjects: IProject[] = [
 		description: 'Aplicación web de mensajería, basada vagamente en WhatsApp. Permite enviar mensajes, fotos, audios y videos; asi como crear grupos. Creado con SvelteKit, Express, TypeScript y Socket.io.',
 		version: [
 			getVersion([typeScript, svelteKit, tailwind, express, socket, mongodb],
-				'svchat-xcrv2f', 'sveltekit-advanced-chat-app')
+				'svchat-xcrv2f.netlify', 'sveltekit-advanced-chat-app')
 		]
 	},
 	{
@@ -43,20 +43,43 @@ export const mainProjects: IProject[] = [
 		description: `Aplicación web de colección de imagenes, basado en ${wrapLink('este')} projecto de Fazt. Permite compartir imagenes, valorarlas, comentarlas, añadir a favoritos, etc; utilizando SvelteKit, Express y TypeScript.`,
 		version: [
 			getVersion([typeScript, svelteKit, tailwind, express, nodemailer, cockroach],
-				'imgshare-4c7df3', 'sveltekit-imgshare-app')
+				'imgshare-4c7df3.netlify', 'sveltekit-imgshare-app')
 		]
 	}
 ];
 
 export const projects: IProject[] = [
 	{
+		id: 3,
+		image: image.links,
+		name: 'Aplicación de Links',
+		description: `Aplicación web para crear, modificar y borrar links; basado en el siguiente proyecto de Fazt: ${wrapLink('Links App con Nodejs')}.`,
+		version: [
+			getVersion([typeScript, nextjs, express, mysql], 'njlinks.vercel',
+				'links-next14-app'),
+			getVersion([typeScript, svelteKit, express, mysql], '', 'sveltekit-task-app')
+		]
+	},
+	{
+		id: 4,
+		image: image.images,
+		name: 'Aplicación de Imágenes',
+		description: `Aplicación web para compartir imágenes, calificarlas y comentarlas; basado en el siguiente proyecto de Fazt: ${wrapLink('imgShare')}.`,
+		version: [
+			getVersion([typeScript, nextjs, express, mongodb], 'njimages.vercel',
+				'images-nextjs14-app'),
+			getVersion([typeScript, svelteKit, express, mongodb], '',
+				'sveltekit-images-app')
+		]
+	},
+	{
 		id: 1,
 		image: image.astro,
 		name: 'Clon de Spotify',
 		description: `Simple web mirror de spotify utilizando Transitions API y Astro, basado en ${wrapLink('este')} proyecto de Miguel Ángel Durán (alias midudev).`,
 		version: [
-			getVersion([typeScript, astro, svelte, tailwind], 'astro-spotify-1ac0a7',
-				'astro-spotify')
+			getVersion([typeScript, astro, svelte, tailwind],
+				'astro-spotify-1ac0a7.netlify', 'astro-spotify')
 		]
 	},
 	{
@@ -67,27 +90,6 @@ export const projects: IProject[] = [
 		version: [
 			getVersion([typeScript, svelteKit, express, socket, mongodb], '',
 				'sveltekit-chat-app')
-		]
-	},
-	{
-		id: 3,
-		image: image.links,
-		name: 'Aplicación de Links',
-		description: `Aplicación web para crear, modificar y borrar links; basado en el siguiente proyecto de Fazt: ${wrapLink('Links App con Nodejs')}.`,
-		version: [
-			getVersion([typeScript, svelteKit, express, mysql], '', 'sveltekit-task-app'),
-			getVersion([typeScript, nextjs, express, mysql], '', 'task-nextjs-app')
-		]
-	},
-	{
-		id: 4,
-		image: image.images,
-		name: 'Aplicación de Imágenes',
-		description: `Aplicación web para compartir imágenes, calificarlas y comentarlas; basado en el siguiente proyecto de Fazt: ${wrapLink('imgShare')}.`,
-		version: [
-			getVersion([typeScript, svelteKit, express, mongodb], '',
-				'sveltekit-images-app'),
-			getVersion([typeScript, nextjs, express, mongodb], '', 'images-nextjs-app')
 		]
 	},
 	{
