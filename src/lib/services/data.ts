@@ -73,6 +73,18 @@ export const projects: IProject[] = [
 		]
 	},
 	{
+		id: 2,
+		image: image.chat,
+		name: 'Simple Aplicación Chat',
+		description: 'Simple aplicación web para chatear (Solo local).',
+		version: [
+			getVersion([typeScript, nextjs, express, socket, mongodb], '',
+				'chat-nextjs14-app'),
+			getVersion([typeScript, svelteKit, express, socket, mongodb], '',
+				'sveltekit-chat-app')
+		]
+	},
+	{
 		id: 1,
 		image: image.astro,
 		name: 'Clon de Spotify',
@@ -80,16 +92,6 @@ export const projects: IProject[] = [
 		version: [
 			getVersion([typeScript, astro, svelte, tailwind],
 				'astro-spotify-1ac0a7.netlify', 'astro-spotify')
-		]
-	},
-	{
-		id: 2,
-		image: image.chat,
-		name: 'Simple Aplicación Chat',
-		description: 'Simple aplicación web para chatear.',
-		version: [
-			getVersion([typeScript, svelteKit, express, socket, mongodb], '',
-				'sveltekit-chat-app')
 		]
 	},
 	{
