@@ -14,6 +14,8 @@ export { default as nodejs } from './nodejs.png';
 export { default as nodemailer } from './nodemailer.png';
 export { default as react } from './react.png';
 export { default as socketio } from './socketio.png';
+export { default as styled } from './styled.png';
+export { default as styled2 } from './styled2.png';
 export { default as svelte } from './svelte.png';
 export { default as tcss } from './tcss.png';
 export { default as ts } from './ts.png';

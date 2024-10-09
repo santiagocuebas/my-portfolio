@@ -5,4 +5,5 @@ export { default as chat } from './chat.webp';
 export { default as images } from './images.png';
 export { default as imgShare } from './imgshare.webp';
 export { default as links } from './links.png';
+export { default as shortener } from './shortener.png';
 export { default as task } from './task.webp';

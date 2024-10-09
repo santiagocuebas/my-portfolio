@@ -2,7 +2,7 @@
 	import * as icon from '$lib/assets/icons';
 
   const listOfMainIcons = [icon.js, icon.ts, icon.tcss, icon.svelte, icon.express, icon.cockroachdb, icon.mongodb];
-  const listOfIcons = [icon.react, icon.astrojs, icon.nodemailer, icon.socketio, icon.mysql];
+  const listOfIcons = [icon.react, icon.astrojs, icon.styled2, icon.nodemailer, icon.socketio, icon.mysql];
 </script>
 
 <div class="home">
